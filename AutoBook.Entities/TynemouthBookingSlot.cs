@@ -30,11 +30,27 @@ namespace AutoBook.Entities
 			this.Booked = booked;
 		}
 
+		public TynemouthBookingSlot(DateTime date, int court, bool booked, string bookingLink) 
+		{
+			this.Date = date;
+			this.Court = court;
+			this.Booked = booked;
+			this.BookingLink = bookingLink;
+		}
+
 		public bool Book()
 		{
+			// Test to see is the court is already booked. 
+			// TODO: Think about throwing an exception instead.
 			if (this.Booked) {
-				return false;
+				throw new ApplicationException ("This slot has already been booked.");
 			}
+
+			// TODO: Think about throwing an exception instead.
+			if (string.IsNullOrEmpty (this.BookingLink)) {
+				throw new ApplicationException ("This slot has no booking url.");
+			}
+
 			this.Booked = true;
 			return this.Booked;
 		}

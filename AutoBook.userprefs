@@ -1,11 +1,35 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AutoBook.Proto/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AutoBook.Tests/BookingSlotTests.cs">
     <Files>
-      <File FileName="AutoBook.Proto/Program.cs" Line="24" Column="1" />
-      <File FileName="AutoBook.Tests/Test.cs" Line="14" Column="13" />
-      <File FileName="AutoBook.Entities/BookingSlot.cs" Line="15" Column="25" />
+      <File FileName="AutoBook.Proto/Program.cs" Line="20" Column="5" />
+      <File FileName="AutoBook.Entities/IBookingSlot.cs" Line="9" Column="2" />
+      <File FileName="AutoBook.Entities/TynemouthBookingSlot.cs" Line="38" Column="35" />
+      <File FileName="AutoBook.Tests/BookingSlotTests.cs" Line="21" Column="22" />
+      <File FileName="AutoBook.Entities/TynemouthParser.cs" Line="10" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="AutoBook.Entities" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="AutoBook.Proto" expanded="True" />
+          <Node name="AutoBook.Tests" expanded="True">
+            <Node name="BookingSlotTests.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

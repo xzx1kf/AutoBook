@@ -7,7 +7,7 @@ using AutoBook.Entities;
 namespace AutoBook.Tests
 {
 	[TestFixture()]
-	public class Test
+	public class BookingSlotTests
 	{
 		private const string mockWebPage = @"../../../TestData/view-source_tynemouth-squash.herokuapp.com.html";
 		private HtmlDocument htmlDoc;
@@ -15,6 +15,7 @@ namespace AutoBook.Tests
 		private TynemouthBookingSlot courtOneAtTwelve_01052017;
 		private int court;
 		private bool booked;
+		private string bookingLink;
 
 		[SetUp()]
 		public void SetUp()
@@ -25,7 +26,8 @@ namespace AutoBook.Tests
 			dateToBook = new DateTime (2017, 5, 1, 12, 0, 0);
 			court = 1;
 			booked = false;
-			courtOneAtTwelve_01052017 = new TynemouthBookingSlot (dateToBook, court, false);
+			bookingLink = "http://www.google.co.uk";
+			courtOneAtTwelve_01052017 = new TynemouthBookingSlot (dateToBook, court, false, bookingLink);
 		}
 
 		[Test()]
@@ -60,15 +62,25 @@ namespace AutoBook.Tests
 		[Test()]
 		public void BookSlotThatIsBookedAlready()
 		{
+			// Book the court.
 			var result = courtOneAtTwelve_01052017.Book ();
 			Assert.That (result, Is.True);
-			result = courtOneAtTwelve_01052017.Book ();
-
-			// Test that the court was not booked.
-			Assert.That (result, Is.False);
-
-			// However the court should still be in a booked state.
 			Assert.That (courtOneAtTwelve_01052017.Booked, Is.True);
+
+			// Try to book it again.
+			Exception ex = Assert.Throws<ApplicationException>(
+				delegate { courtOneAtTwelve_01052017.Book (); } );
+			Assert.That( ex.Message, Is.EqualTo( "This slot has already been booked." ) );
+		}
+
+		[Test()]
+		public void NoBookingLink()
+		{
+			courtOneAtTwelve_01052017.BookingLink = null;
+
+			Exception ex = Assert.Throws<ApplicationException>(
+				delegate { courtOneAtTwelve_01052017.Book (); } );
+			Assert.That( ex.Message, Is.EqualTo( "This slot has no booking url." ) );
 		}
 	}
 }
