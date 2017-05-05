@@ -16,7 +16,7 @@ namespace AutoBook.Proto
 			var bookingSlots = htmlDoc.DocumentNode.SelectNodes ("//table[@class='booking']/tr/td[@class='booking']");
 
 			foreach (HtmlNode slot in bookingSlots) {
-				var bookingSlot = new BookingSlot (DateTime.Today, 1, true);
+				var bookingSlot = new TynemouthBookingSlot (DateTime.Today, 1, true);
 			}
 		}
 	}

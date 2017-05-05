@@ -33,9 +33,22 @@
     <Reference Include="nunit.framework">
       <Private>False</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoBook.Entities\AutoBook.Entities.csproj">
+      <Project>{172D69B4-DC5E-4C03-9E41-00D3FDAE5F78}</Project>
+      <Name>AutoBook.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
