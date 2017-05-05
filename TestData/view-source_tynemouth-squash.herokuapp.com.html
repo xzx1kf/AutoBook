@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <title>Tynemouth Squash Booking</title>
+  <script src="/assets/application-945811c0e151786a0abfdca07897ea23.js"></script>
+  <link rel="stylesheet" media="screen" href="/assets/application-83546c887810dd74371853530ccbd8f6.css" />
+    
+  
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="qy61SH0xlmNHC/NuUVELwcY0OH7M25W/kYWYijdE/DOqFUCAAWuCv44MldLpuDQCPA9s5aNmAh3PRIS4g2Oj7g==" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/touch-icon-ipad.png" />
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-c49fc2727167227f42a04d1c3fd5a31a.ico" />
+</head>
+<body>
+<div id ="toggleDiv">
+</div>
+<ul class="nav">
+	<li class="nav"><a href="/bookings">Court Booking</a> |</li>
+	<!-- <li class="nav"><a href="/leagues">Leagues</a> |</li> -->
+	<li class="nav"><a href="/players">Player List</a></li>
+</ul>
+
+<div id="user_nav">
+    <a class="login" href="/log_in">Admin</a>
+</div>
+
+
+<div id="select_date"></div>
+<div id="select_admin_date"></div>
+<a id="change_day_left" href="/?day=-1">◄</a>
+
+<div class="overflowTable">
+<table class="booking">
+<tr>
+	<th colspan="1" class="booking"> Court 5</th>
+	<th colspan="1" class="booking"> Court 4</th>
+	<th colspan="1" class="booking"> Court 3</th>
+	<th colspan="1" class="booking"> Court 2</th>
+	<th colspan="1" class="booking"> Court 1</th>
+</tr>
+
+<tr>
+	<td class="booking">	
+		<div class='time'>12:25</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=12&amp;min=25&amp;timeSlot=86">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'>12:20</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=12&amp;min=20&amp;timeSlot=66">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'>12:20</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=12&amp;min=20&amp;timeSlot=46">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='noTime'>12:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49688">J Evans</a>
+								<a href="/bookings/49688"> v T Cockill</a>
+								
+					</div>
+					<div class="paid">
+						<a id="paid_link_49688" class="has_paid" title="full £7.00" href="/bookings/49688">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='noTime'>12:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49927">A Fox</a>
+								&nbsp
+					</div>
+					<div class="paid">
+						<a id="paid_link_49927" class="has_paid" title="restricted £7.00" href="/bookings/49927">Paid</a>    
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 1:05</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=13&amp;min=05&amp;timeSlot=87">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=13&amp;min=00&amp;timeSlot=67">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=13&amp;min=00&amp;timeSlot=47">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=13&amp;min=10&amp;timeSlot=27">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=13&amp;min=10&amp;timeSlot=7">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 1:45</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=13&amp;min=45&amp;timeSlot=88">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=13&amp;min=40&amp;timeSlot=68">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=13&amp;min=40&amp;timeSlot=48">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:50</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=13&amp;min=50&amp;timeSlot=28">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 1:50</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=13&amp;min=50&amp;timeSlot=8">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 2:25</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=14&amp;min=25&amp;timeSlot=89">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 2:20</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=14&amp;min=20&amp;timeSlot=69">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 2:20</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=14&amp;min=20&amp;timeSlot=49">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 2:30</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=14&amp;min=30&amp;timeSlot=29">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 2:30</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=14&amp;min=30&amp;timeSlot=9">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 3:05</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=15&amp;min=05&amp;timeSlot=90">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=15&amp;min=00&amp;timeSlot=70">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=15&amp;min=00&amp;timeSlot=50">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=15&amp;min=10&amp;timeSlot=30">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=15&amp;min=10&amp;timeSlot=10">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 3:45</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=15&amp;min=45&amp;timeSlot=91">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=15&amp;min=40&amp;timeSlot=71">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 3:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=15&amp;min=40&amp;timeSlot=51">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='noTime'> 3:50</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49952">S Dews</a>
+								&nbsp
+					</div>
+					<div class="paid">
+						<a id="paid_link_49952" class="has_paid" title="restricted £7.00" href="/bookings/49952">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='time'> 3:50</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=15&amp;min=50&amp;timeSlot=11">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 4:25</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48984">Ray<br />Rycroft</a>
+							
+					</div>
+					<div class="paid">
+						<a id="paid_link_48984" class="has_paid" title="class £7.00" href="/bookings/48984">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 4:20</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=16&amp;min=20&amp;timeSlot=72">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 4:20</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49765">C Donkin</a>
+								<a href="/bookings/49765"> v J Thompson</a>
+								
+					</div>
+					<div class="paid">
+						<a id="paid_link_49765" class="has_paid" title="junior £3.50" href="/bookings/49765">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 4:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49012">K Watson</a>
+								<a href="/bookings/49012"> v G Millington</a>
+								
+					</div>
+					<div class="paid">
+						<a id="paid_link_49012" class="has_paid" title="restricted £7.00" href="/bookings/49012">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 4:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49919">J Douglas</a>
+								<a href="/bookings/49919"> v D Barnett</a>
+								
+					</div>
+					<div class="paid">
+						<a id="paid_link_49919" class="has_paid" title="restricted £7.00" href="/bookings/49919">Paid</a>    
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 5:05</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48985">Ray<br />Rycroft</a>
+							
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:00</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49754">E Henein</a>
+								&nbsp
+					</div>
+					<div class="paid">
+						<a id="paid_link_49754" class="has_paid" title="full £7.00" href="/bookings/49754">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:00</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49732">S Ho</a>
+								<a href="/bookings/49732"> v J Thompson</a>
+								
+					</div>
+					<div class="paid">
+						<a id="paid_link_49732" class="has_paid" title="full £7.00" href="/bookings/49732">Paid</a>    
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:10</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48999">G Wallace</a>
+								<a href="/bookings/48999"> v S Lines</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:10</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49019">W Maloney</a>
+								&nbsp
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 5:45</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48986">Ray<br />Rycroft</a>
+							
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:40</div>
+	
+					<div class="cancelled">
+						 <!-- if it's a team or zumba then use the whole name -->
+								<a href="/bookings/48994">court<br />available</a>
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:40</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49021">D Watt</a>
+								<a href="/bookings/49021"> v B Watson</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:50</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49014">W Dobson</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 5:50</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49020">G Rowley</a>
+								&nbsp
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 6:25</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49804">R Steele</a>
+								<a href="/bookings/49804"> v D Blackshaw</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 6:20</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48996">A Johnsen</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 6:20</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49827">L Peters</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 6:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48998">E Mok</a>
+								<a href="/bookings/48998"> v L Lockwood</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 6:30</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48995">M Preston</a>
+								&nbsp
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 7:05</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49768">H Cliff</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:00</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48997">W Ridley</a>
+								<a href="/bookings/48997"> v K Robson</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:00</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49010">N Dobson</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:10</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49002">D Armstrong</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:10</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/48992">M Preston</a>
+								&nbsp
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 7:45</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49915">G Taylor</a>
+								<a href="/bookings/49915"> v A Green</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:40</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49001">J Brown</a>
+								<a href="/bookings/49001"> v T Allan</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:40</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49008">D Todd</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:50</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49000">L Robertson</a>
+								<a href="/bookings/49000"> v J Simpson</a>
+								
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 7:50</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49004">S Brown</a>
+								<a href="/bookings/49004"> v M Steven</a>
+								
+					</div>
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='peakTime'> 8:25</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=20&amp;min=25&amp;timeSlot=98">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 8:20</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49612">I Clough</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 8:20</div>
+	
+					<div class="booked">
+						 <!-- if it's a team or zumba then use the whole name -->
+							<a href="/bookings/49102">R Bradley</a>
+								&nbsp
+					</div>
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 8:30</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=20&amp;min=30&amp;timeSlot=38">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='peakTime'> 8:30</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=20&amp;min=30&amp;timeSlot=18">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 9:05</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=21&amp;min=05&amp;timeSlot=99">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=21&amp;min=00&amp;timeSlot=79">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:00</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=21&amp;min=00&amp;timeSlot=59">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=21&amp;min=10&amp;timeSlot=39">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:10</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=21&amp;min=10&amp;timeSlot=19">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+<tr>
+	<td class="booking">	
+		<div class='time'> 9:45</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=5&amp;days=0&amp;hour=21&amp;min=45&amp;timeSlot=100">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=4&amp;days=0&amp;hour=21&amp;min=40&amp;timeSlot=80">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:40</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=3&amp;days=0&amp;hour=21&amp;min=40&amp;timeSlot=60">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:50</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=2&amp;days=0&amp;hour=21&amp;min=50&amp;timeSlot=40">book<br />court</a>
+			</div>
+			
+	
+</td>
+	<td class="booking">	
+		<div class='time'> 9:50</div>
+			<div class="book">
+				<a class="booking_link" href="/bookings/new?court=1&amp;days=0&amp;hour=21&amp;min=50&amp;timeSlot=20">book<br />court</a>
+			</div>
+			
+	
+</td>
+</tr>
+</table>
+</div>
+<a id="change_day_right" href="/?day=1">►</a>
+
+<div id="clearfix"></div>
+
+<div class="date">
+	
+	<span class="datePicker">
+	<a id="change_day" class="arrow" href="/?day=-1">◄</a>
+		<a href="#" onclick="show('select_date'); return false;" class="day">Thursday 04 May</a>
+		<a id="change_day" class="arrow" href="/?day=1">►</a>
+		</span>
+		
+	
+	<a class="last_day" id="change_day" href="/?day=21">+3 Weeks</a>
+</div>
+
+<div id="clearfix"></div>
+
+<p id="center" class="warning">Membership fees are now overdue. Members won't be able to book courts until they have renewed.</p>
+
+<script>
+//<![CDATA[
+
+  window.day = '0';
+
+//]]>
+</script>
+<script src="http://js.pusher.com/2.2/pusher.min.js"></script>
+ <script type="text/javascript">
+ // If your Heroku application is within the EU region,
+ // uncomment the followling lines
+  //Pusher.host = 'ws-eu.pusher.com';
+  //Pusher.sockjs_host = 'sockjs-eu.pusher.com';
+
+ var pusher = new Pusher('58bb4bb9e92e82e4f09d'); // uses your APP KEY
+ var channel = pusher.subscribe('tynemouthChannel');
+ 
+ channel.bind('booking', function(data) {
+	 // window.alert(data.reloadDay + ':' + day)
+	 if (day == data.reloadDay) {
+		// window.alert('reloading')
+	 	location.reload(true)
+	 } else {
+	 	// window.alert('not reloading')
+	 }
+ });
+ </script>
+ 
+
+</body>
+</html>

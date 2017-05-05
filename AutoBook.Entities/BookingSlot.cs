@@ -29,6 +29,11 @@ namespace AutoBook.Entities
 			set;
 		}
 
+		public string BookingLink { 
+			get; 
+			set; 
+		}
+
 		public TynemouthBookingSlot(DateTime date, int court, bool booked) : base(date)
 		{
 			this.Date = date;
@@ -36,7 +41,7 @@ namespace AutoBook.Entities
 			this.Booked = booked;
 		}
 
-		public bool BookCourt(BookingSlot slot)
+		public bool Book(BookingSlot slot)
 		{
 			return true;
 		}
