@@ -25,10 +25,13 @@ namespace AutoBook.Proto
 
 			foreach (HtmlNode slot in bookingSlots) {
 				// Time
-				// TODO: should be in parser and should test if the 'time' class is there.
-				// TODO: unit tests!!!
-				var timeStr = slot.SelectSingleNode ("div[@class='time']").InnerText;
-				var time = TynemouthParser.ParseTime (timeStr);
+				var time = new TimeSpan();
+				try {
+					time = TynemouthParser.ParseTime (slot);
+				}
+				catch(ArgumentException) {
+					continue;
+				}
 
 				// DateTime
 				var slotDateTime = TynemouthParser.GetDateTime (date, time);
@@ -45,7 +48,7 @@ namespace AutoBook.Proto
 				// Court
 				var court = 0;
 				if (!booked) {
-					court = int.Parse (bookingLink.Substring (20, 1));
+					court = TynemouthParser.GetCourt (bookingLink);
 				}
 
 				var bookingSlot = new TynemouthBookingSlot (slotDateTime, court, booked, bookingLink);

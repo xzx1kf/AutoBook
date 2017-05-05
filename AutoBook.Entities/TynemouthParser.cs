@@ -9,8 +9,7 @@ namespace AutoBook.Entities
 {
 	public class TynemouthParser
 	{
-		//private static readonly Regex timeRegex = new Regex (@"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$");
-		private static readonly Regex timeRegex = new Regex (@"^([0-9]|12|):[0-5][0-9]$");
+		private static readonly Regex timeRegex = new Regex (@"^( [0-9]|12|):[0-5][0-9]$");
 		  
 		public static bool Booked(HtmlNode slot)
 		{
@@ -18,6 +17,11 @@ namespace AutoBook.Entities
 				return true;
 			}
 			return false;
+		}
+
+		public static int GetCourt(string bookingLink)
+		{
+			return int.Parse (bookingLink.Substring (20, 1));
 		}
 
 		public static DateTime GetDateTime(DateTime date, TimeSpan time)
@@ -41,8 +45,17 @@ namespace AutoBook.Entities
 			}
 		}
 
-		public static TimeSpan ParseTime(string time)
+		public static TimeSpan ParseTime(HtmlNode slot)
 		{
+			var timeNode = slot.SelectSingleNode ("div[@class='time']");
+			var time = "";
+
+			if (timeNode == null) {
+				throw new ArgumentException ("The booking slot does not have a time parameter. Is it booked already?");
+			} else {
+				time = timeNode.InnerText;
+			}
+
 			if (!VerifyTime (time)) { 
 				throw new Exception ("Time is not in the correct format.");
 			}

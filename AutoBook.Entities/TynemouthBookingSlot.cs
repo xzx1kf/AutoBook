@@ -40,13 +40,10 @@ namespace AutoBook.Entities
 
 		public bool Book()
 		{
-			// Test to see is the court is already booked. 
-			// TODO: Think about throwing an exception instead.
 			if (this.Booked) {
 				throw new ApplicationException ("This slot has already been booked.");
 			}
 
-			// TODO: Think about throwing an exception instead.
 			if (string.IsNullOrEmpty (this.BookingLink)) {
 				throw new ApplicationException ("This slot has no booking url.");
 			}

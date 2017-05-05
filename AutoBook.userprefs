@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AutoBook.Tests/BookingSlotTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AutoBook.Tests/ParserTests.cs">
     <Files>
-      <File FileName="AutoBook.Proto/Program.cs" Line="20" Column="5" />
-      <File FileName="AutoBook.Entities/IBookingSlot.cs" Line="9" Column="2" />
-      <File FileName="AutoBook.Entities/TynemouthBookingSlot.cs" Line="38" Column="35" />
+      <File FileName="AutoBook.Proto/Program.cs" Line="59" Column="1" />
+      <File FileName="AutoBook.Entities/IBookingSlot.cs" Line="1" Column="1" />
+      <File FileName="AutoBook.Entities/TynemouthBookingSlot.cs" Line="1" Column="1" />
       <File FileName="AutoBook.Tests/BookingSlotTests.cs" Line="21" Column="22" />
-      <File FileName="AutoBook.Entities/TynemouthParser.cs" Line="10" Column="4" />
+      <File FileName="AutoBook.Entities/TynemouthParser.cs" Line="14" Column="43" />
+      <File FileName="AutoBook.Tests/ParserTests.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +17,7 @@
           </Node>
           <Node name="AutoBook.Proto" expanded="True" />
           <Node name="AutoBook.Tests" expanded="True">
-            <Node name="BookingSlotTests.cs" selected="True" />
+            <Node name="ParserTests.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -32,9 +33,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/nick/Projects/AutoBook/AutoBook.Proto/Program.cs" line="18" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

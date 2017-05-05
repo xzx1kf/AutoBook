@@ -8,31 +8,44 @@ namespace AutoBook.Tests
 	[TestFixture()]
 	public class ParserTests
 	{
+		private const string mockWebPage = @"../../../TestData/view-source_tynemouth-squash.herokuapp.com.html";
+		private HtmlDocument htmlDoc;
+
+
 		[SetUp()]
 		public void SetUp()
 		{
+			htmlDoc = new HtmlDocument ();
+			htmlDoc.Load(mockWebPage);
 
+			// Booking slots
+			//var bookingSlots = htmlDoc.DocumentNode.SelectNodes ("//table[@class='booking']/tr/td[@class='booking']");
 		}
 
 		[Test()]
 		public void ParseTimeString (
-			[Values("2:05", "12:00")] string time)
+			[Values("12:20", "1:00", "7:40")] string time)
 		{
-			var splitTime = time.Split (new char[] { ':' });
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			node.InnerHtml = "<div class='time'>"+time+"</div>";
 
-			var result = TynemouthParser.ParseTime (time);
+			var result = TynemouthParser.ParseTime (node);
 
-			Assert.That (result.Hours, Is.EqualTo (int.Parse(splitTime[0])));
-			Assert.That (result.Minutes, Is.EqualTo (int.Parse(splitTime[1])));
+			var timeArr = time.Split (new char[] { ':' });
+			var timeNum = Array.ConvertAll (timeArr, int.Parse);
+
+			Assert.That (result.Hours, Is.EqualTo (timeNum[0]));
+			Assert.That (result.Minutes, Is.EqualTo (timeNum[1]));
 		}
 
 		[Test()]
 		public void ParseTimeWithIncorrectFormat()
 		{
-			var time = "this isn't a time";
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			node.InnerHtml = "<div class='time'>This isn't a time</div>";
 
 			Exception ex = Assert.Throws<Exception>(
-				delegate { TynemouthParser.ParseTime (time); } );
+				delegate { TynemouthParser.ParseTime (node); } );
 			Assert.That( ex.Message, Is.EqualTo( "Time is not in the correct format." ) );
 		}
 
@@ -40,8 +53,11 @@ namespace AutoBook.Tests
 		public void ParseTimeWhereTimeIsNotAllowed(
 			[Values("10:00", "13:00", "11:59", "2:1", "AB:CD", "1:A", "2:3B")] string time)
 		{
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			node.InnerHtml = "<div class='time'>"+time+"</div>";
+
 			Exception ex = Assert.Throws<Exception>(
-				delegate { TynemouthParser.ParseTime (time); } );
+				delegate { TynemouthParser.ParseTime (node); } );
 			Assert.That( ex.Message, Is.EqualTo( "Time is not in the correct format." ) );
 		}
 
