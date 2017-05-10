@@ -12,7 +12,7 @@ namespace AutoBook.Proto
 		public static void Main (string[] args)
 		{
 			var htmlDoc = new HtmlDocument ();
-			htmlDoc.Load(@"/home/nick/TestData/view-source_tynemouth-squash.herokuapp.com.html");
+			htmlDoc.Load(@"../../../TestData/view-source_tynemouth-squash.herokuapp.com.html");
 
 			// Booking slots
 			var bookingSlots = htmlDoc.DocumentNode.SelectNodes ("//table[@class='booking']/tr/td[@class='booking']");
@@ -58,6 +58,8 @@ namespace AutoBook.Proto
 			foreach (TynemouthBookingSlot slot in courtAvailability) {
 				Console.WriteLine (string.Format ("{0} {1} {2}", slot.Date, slot.Court, slot.BookingLink));
 			}
+
+            Console.ReadKey();
 		}
 	}
 }

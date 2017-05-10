@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Reflection;
 using AutoBook.Entities;
 using NUnit.Framework;
 using HtmlAgilityPack;
@@ -8,15 +10,31 @@ namespace AutoBook.Tests
 	[TestFixture()]
 	public class ParserTests
 	{
-		private const string mockWebPage = @"../../../TestData/view-source_tynemouth-squash.herokuapp.com.html";
-		private HtmlDocument htmlDoc;
+		//private const string MockWebPage = @"TestData/view-source_tynemouth-squash.herokuapp.com.html";
+		private HtmlDocument _htmlDoc;
 
+	    [OneTimeSetUp()]
+	    public void OneTimeSetUp()
+	    {
+	        var text = "";
+	        var assembly = Assembly.GetExecutingAssembly();
+	        using (var stream = assembly.GetManifestResourceStream("AutoBook.Tests.TestData.view-source_tynemouth-squash.herokuapp.com.html"))
+	            if (stream != null)
+	                using (var reader = new StreamReader(stream))
+	                {
+	                    text = reader.ReadToEnd();
+	                }
+
+	        _htmlDoc = new HtmlDocument();
+	        _htmlDoc.LoadHtml(text);
+        }
 
 		[SetUp()]
 		public void SetUp()
 		{
-			htmlDoc = new HtmlDocument ();
-			htmlDoc.Load(mockWebPage);
+		    
+
+            
 
 			// Booking slots
 			//var bookingSlots = htmlDoc.DocumentNode.SelectNodes ("//table[@class='booking']/tr/td[@class='booking']");
@@ -26,7 +44,7 @@ namespace AutoBook.Tests
 		public void ParseTimeString (
 			[Values("12:20", "1:00", "7:40")] string time)
 		{
-			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, _htmlDoc, 0);
 			node.InnerHtml = "<div class='time'>"+time+"</div>";
 
 			var result = TynemouthParser.ParseTime (node);
@@ -41,7 +59,7 @@ namespace AutoBook.Tests
 		[Test()]
 		public void ParseTimeWithIncorrectFormat()
 		{
-			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, _htmlDoc, 0);
 			node.InnerHtml = "<div class='time'>This isn't a time</div>";
 
 			Exception ex = Assert.Throws<Exception>(
@@ -53,7 +71,7 @@ namespace AutoBook.Tests
 		public void ParseTimeWhereTimeIsNotAllowed(
 			[Values("10:00", "13:00", "11:59", "2:1", "AB:CD", "1:A", "2:3B")] string time)
 		{
-			HtmlNode node = new HtmlNode (HtmlNodeType.Text, htmlDoc, 0);
+			HtmlNode node = new HtmlNode (HtmlNodeType.Text, _htmlDoc, 0);
 			node.InnerHtml = "<div class='time'>"+time+"</div>";
 
 			Exception ex = Assert.Throws<Exception>(

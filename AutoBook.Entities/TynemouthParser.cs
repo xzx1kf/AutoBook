@@ -9,7 +9,7 @@ namespace AutoBook.Entities
 {
 	public class TynemouthParser
 	{
-		private static readonly Regex timeRegex = new Regex (@"^( [0-9]|12|):[0-5][0-9]$");
+		private static readonly Regex timeRegex = new Regex (@"^([0-9]| [0-9]|12|):[0-5][0-9]$");
 		  
 		public static bool Booked(HtmlNode slot)
 		{
