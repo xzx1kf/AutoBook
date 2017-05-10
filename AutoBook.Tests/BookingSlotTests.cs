@@ -97,7 +97,8 @@ namespace AutoBook.Tests
 	    [Test()]
 	    public void SlotIsInThePast()
 	    {
-            Assert.True(false);
+	        var result = _courtOneAtTwelve01052017.Book();
+	        Assert.That(result, Is.False);
 	    }
 	}
 }

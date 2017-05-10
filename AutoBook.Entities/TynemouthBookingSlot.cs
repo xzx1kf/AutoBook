@@ -48,7 +48,10 @@ namespace AutoBook.Entities
 				throw new ApplicationException ("This slot has no booking url.");
 			}
 
-
+		    if (this.Date <= DateTime.Now)
+		    {
+		        return false;
+		    }
 
 			this.Booked = true;
 			return this.Booked;
