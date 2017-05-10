@@ -93,6 +93,12 @@ namespace AutoBook.Tests
 				delegate { _courtOneAtTwelve01052017.Book (); } );
 			Assert.That( ex.Message, Is.EqualTo( "This slot has no booking url." ) );
 		}
+
+	    [Test()]
+	    public void SlotIsInThePast()
+	    {
+            Assert.True(false);
+	    }
 	}
 }
 
