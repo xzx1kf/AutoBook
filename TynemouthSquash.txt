@@ -1,0 +1,56 @@
+﻿court 2
+days 20
+hour 20
+min 30
+timeSlot 38
+
+booking[booking_number] 1
+booking[full_name] Nick Hale
+booking[membership_number] s119
+
+booking[start_time] 2017-05-31 20:30:00 +01:00
+booking[time_slot_id] 38
+booking[court_time] 40 // minutes duration?
+booking[court_id] 2
+booking[days] 20
+
+utf8:✓
+authenticity_token:Vw0CRcj+mPJMUCx3YHeIQ60uNmlJqc3AhMfObtgwBr6w1ZEvDmwK+khItnvZncDvQEeNerJRNnLmixc19VRm9Q==
+booking[full_name]:Nick Hale
+booking[membership_number]:s119
+booking[vs_player_name]:
+booking[booking_number]:1
+booking[start_time]:2017-05-31 20:30:00 +0100
+booking[time_slot_id]:38
+booking[court_time]:40
+booking[court_id]:2
+booking[days]:20
+commit:Book Court
+
+
+
+Server:Cowboy
+Set-Cookie:_squash_session=Nm1Nd09QMjM0S2sweWMra3VJaVlvSHFEWHFDdE9EZnliMFhvODJGQm1ONVdnTXpzWXhwVHJKZ2dPZEFkMjBsVHVJK0QvTTdqRGdoTExqVG5XWjBCVjd5c09FQlZMcXlsV3dTUUFLVW9CVTBSTDZsbHhteksveHRSbHQzbG1JRXkrTzRmTnYwV3NYdGdNOElLTkgrRGY3KzZEb3FMcVI2Z2xNWnlldVRuREN5c2QrcFVvSDNvY1JpbjcwblFRZ0YwLS1VbXlUOU9qTmNINmg1U2tiV1Z4cXV3PT0%3D--9e0129325a584bcad7331cccb5db6ba5261a5e2c; path=/; HttpOnly
+Via:1.1 vegur
+X-Content-Type-Options:nosniff
+X-Frame-Options:SAMEORIGIN
+X-Request-Id:0ff65587-88cd-4594-9362-2f197eb356ef
+X-Runtime:0.087735
+X-Xss-Protection:1; mode=block
+
+
+utf8:✓
+authenticity_token:IFjsy5ZR5EbgY7XR01MoLPA3RRrcWp04gD44+KdjUTvHgH+hUMN2TuR7L91quWCAHV7+CSeiZoricuGjigcxcA==
+booking[full_name]:Nick Hale
+booking[membership_number]:s119
+booking[vs_player_name]:
+booking[booking_number]:1
+booking[start_time]:2017-05-31 20:30:00 +0100
+booking[time_slot_id]:38
+booking[court_time]:40
+booking[court_id]:2
+booking[days]:20
+commit:Book Court
+
+
+utf8=%E2%9C%93&authenticity_token=IFjsy5ZR5EbgY7XR01MoLPA3RRrcWp04gD44%2BKdjUTvHgH%2BhUMN2TuR7L91quWCAHV7%2BCSeiZoricuGjigcxcA%3D%3D&booking%5Bfull_name%5D=Nick+Hale&booking%5Bmembership_number%5D=s119&booking%5Bvs_player_name%5D=&booking%5Bbooking_number%5D=1&booking%5Bstart_time%5D=2017-05-31+20%3A30%3A00+%2B0100&booking%5Btime_slot_id%5D=38&booking%5Bcourt_time%5D=40&booking%5Bcourt_id%5D=2&booking%5Bdays%5D=20&commit=Book+Court
