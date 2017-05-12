@@ -37,7 +37,7 @@ namespace AutoBook.Tests
             _dateToBook = new DateTime (2017, 5, 1, 12, 0, 0);
 			_court = 1;
 			_booked = false;
-			_bookingLink = "http://tynemouth-squash.herokuapp.com/bookings/new?court=2&days=20&hour=20&min=30&timeSlot=38";
+			_bookingLink = "http://tynemouth-squash.herokuapp.com/bookings/new?court=2&amp;days=20&amp;hour=20&amp;min=30&amp;timeSlot=38";
 			_courtOneAtTwelve01052017 = new TynemouthBookingSlot (_dateToBook, _court, false, _bookingLink);
 		}
 
@@ -65,6 +65,7 @@ namespace AutoBook.Tests
 		[Test()]
 		public void BookSlot()
 		{
+			_courtOneAtTwelve01052017.Date = _courtOneAtTwelve01052017.Date.AddYears (100);
 			var result = _courtOneAtTwelve01052017.Book ();
 			Assert.That (result, Is.True);
 			Assert.That (_courtOneAtTwelve01052017.Booked, Is.True);
@@ -74,6 +75,7 @@ namespace AutoBook.Tests
 		public void BookSlotThatIsBookedAlready()
 		{
 			// Book the court.
+			_courtOneAtTwelve01052017.Date = _courtOneAtTwelve01052017.Date.AddYears (100);
 			var result = _courtOneAtTwelve01052017.Book ();
 			Assert.That (result, Is.True);
 			Assert.That (_courtOneAtTwelve01052017.Booked, Is.True);

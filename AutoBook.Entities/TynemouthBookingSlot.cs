@@ -76,7 +76,7 @@ namespace AutoBook.Entities
 		        return false;
 		    }
 
-			BookSlotOnWebSite ();
+			//BookSlotOnWebSite ();
 
 			this.Booked = true;
 			return this.Booked;
