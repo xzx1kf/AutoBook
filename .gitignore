@@ -4,6 +4,7 @@
 # User-specific files
 *.suo
 *.user
+*.userprefs
 *.userosscache
 *.sln.docstates
 
@@ -29,6 +30,7 @@ bld/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
+[Tt]est-[Rr]esult*/
 [Bb]uild[Ll]og.*
 
 # NUNIT

@@ -40,9 +40,9 @@ namespace AutoBook.Proto
 
         public static void Main (string[] args)
 		{
-
-		    var cookieJar = new CookieContainer();
-		    CookieAwareWebClient client = new CookieAwareWebClient(cookieJar);
+			var cookieJar = new CookieContainer();
+			using (var client = new CookieAwareWebClient(cookieJar))
+			{
 
 		    // the website sets some cookie that is needed for login, and as well the 'authenticity_token' is always different
 		    string response = client.DownloadString("http://tynemouth-squash.herokuapp.com/bookings/new?court=2&days=20&hour=20&min=30&timeSlot=38");
@@ -61,9 +61,7 @@ namespace AutoBook.Proto
 		     //   new Regex("__RequestVerificationToken=(?<CRSF_Token>[^;]+)")
 		      //      .Match(webClientData.ResponseHeaders["Set-Cookie"]), "CRSF_Token");
                    
-            
-            using (var client2 = new WebClient())
-		    {
+          
 		        var values = new NameValueCollection();
 		        values["authenticity_token"] = token;
 		        values["booking[booking_number]"] = "1";
@@ -77,10 +75,10 @@ namespace AutoBook.Proto
                 values["commit"] = "Book Court";
 		        values["utf8"] = "%E2%9C%93";
 
-		        client2.Encoding = System.Text.Encoding.UTF8;
+		        client.Encoding = System.Text.Encoding.UTF8;
 
-                client2.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-                var response2 = client2.UploadValues(("http://tynemouth-squash.herokuapp.com/bookings", values);
+                client.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                var response2 = client.UploadValues("http://tynemouth-squash.herokuapp.com/bookings", values);
 
 		        var responseString = Encoding.Default.GetString(response2);
 		    }
