@@ -37,7 +37,7 @@ namespace AutoBook.Tests
             _dateToBook = new DateTime (2017, 5, 1, 12, 0, 0);
 			_court = 1;
 			_booked = false;
-			_bookingLink = "http://www.google.co.uk";
+			_bookingLink = "http://tynemouth-squash.herokuapp.com/bookings/new?court=2&days=20&hour=20&min=30&timeSlot=38";
 			_courtOneAtTwelve01052017 = new TynemouthBookingSlot (_dateToBook, _court, false, _bookingLink);
 		}
 
@@ -100,6 +100,27 @@ namespace AutoBook.Tests
 	        var result = _courtOneAtTwelve01052017.Book();
 	        Assert.That(result, Is.False);
 	    }
+
+		[Test()]
+		public void SlotReturnsCorrectDaysProperty()
+		{
+			var result = _courtOneAtTwelve01052017.Days;
+			Assert.That (result, Is.EqualTo ("20"));
+		}
+
+		[Test()]
+		public void SlotReturnsCorrectTimeSlot()
+		{
+			var result = _courtOneAtTwelve01052017.TimeSlot;
+			Assert.That (result, Is.EqualTo ("38"));
+		}
+
+		[Test()]
+		public void SlotReturnsStartTime()
+		{
+			var result = _courtOneAtTwelve01052017.StartTime;
+			Assert.That (result, Is.EqualTo ("2017-05-01 12:00:00 +01:00"));
+		}
 	}
 }
 

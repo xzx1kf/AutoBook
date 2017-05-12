@@ -13,7 +13,7 @@ namespace AutoBook.Tests
 		//private const string MockWebPage = @"TestData/view-source_tynemouth-squash.herokuapp.com.html";
 		private HtmlDocument _htmlDoc;
 
-	    [OneTimeSetUp()]
+	    [TestFixtureSetUp()]
 	    public void OneTimeSetUp()
 	    {
 	        var text = "";
