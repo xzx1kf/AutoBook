@@ -14,7 +14,7 @@ namespace AutoBook.Tests
 		//private const string mockWebPage = @"../../../TestData/view-source_tynemouth-squash.herokuapp.com.html";
 		private HtmlDocument _htmlDoc;
 		private DateTime _dateToBook;
-		private TynemouthBookingSlot _courtOneAtTwelve01052017;
+		private Slot _courtOneAtTwelve01052017;
 		private int _court;
 		private bool _booked;
 		private string _bookingLink;
@@ -38,7 +38,7 @@ namespace AutoBook.Tests
 			_court = 1;
 			_booked = false;
 			_bookingLink = "http://tynemouth-squash.herokuapp.com/bookings/new?court=2&amp;days=20&amp;hour=20&amp;min=30&amp;timeSlot=38";
-			_courtOneAtTwelve01052017 = new TynemouthBookingSlot (_dateToBook, _court, false, _bookingLink);
+			_courtOneAtTwelve01052017 = new Slot (_dateToBook, _court, false, _bookingLink);
 		}
 
 		[Test()]

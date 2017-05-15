@@ -7,12 +7,14 @@ using System.Collections.Specialized;
 
 namespace AutoBook.Entities
 {
-	public class TynemouthBookingSlot : IBookingSlot
+	[Serializable]
+	public class Slot
 	{
 		public DateTime Date {
 			get;
 			set;
 		}
+
 		public int Court {
 			get;
 			set;
@@ -43,25 +45,39 @@ namespace AutoBook.Entities
 			private set;
 		}
 
-		public TynemouthBookingSlot(DateTime date, int court, bool booked) 
+		public Slot (DateTime date, bool booked, string bookingLink)
+		{
+			this.Date = date;
+			this.Booked = booked;
+			this.BookingLink = bookingLink;
+
+			if (!string.IsNullOrEmpty (this.BookingLink)) {
+				this.parseBookingLink ();
+			}
+			this.StartTime = this.Date.ToString ("yyyy-MM-dd HH:mm:ss zzz");
+		}
+
+		public Slot (DateTime date, int court, bool booked)
 		{
 			this.Date = date;
 			this.Court = court;
 			this.Booked = booked;
 		}
 
-		public TynemouthBookingSlot(DateTime date, int court, bool booked, string bookingLink) 
+		public Slot (DateTime date, int court, bool booked, string bookingLink)
 		{
 			this.Date = date;
 			this.Court = court;
 			this.Booked = booked;
 			this.BookingLink = bookingLink;
 
-			this.parseBookingLink ();
+			if (!string.IsNullOrEmpty (this.BookingLink)) {
+				this.parseBookingLink ();
+			}
 			this.StartTime = this.Date.ToString ("yyyy-MM-dd HH:mm:ss zzz");
 		}
 
-		public bool Book()
+		public bool Book ()
 		{
 			if (this.Booked) {
 				throw new ApplicationException ("This slot has already been booked.");
@@ -71,10 +87,9 @@ namespace AutoBook.Entities
 				throw new ApplicationException ("This slot has no booking url.");
 			}
 
-		    if (this.Date <= DateTime.Now)
-		    {
-		        return false;
-		    }
+			if (this.Date <= DateTime.Now) {
+				return false;
+			}
 
 			//BookSlotOnWebSite ();
 
@@ -82,17 +97,16 @@ namespace AutoBook.Entities
 			return this.Booked;
 		}
 
-		private void parseBookingLink()
+		private void parseBookingLink ()
 		{
 			var options = this.BookingLink.Replace ("/bookings/new?", "");
 			var tokens = options.Split (new string[] { "&amp;" }, StringSplitOptions.None);
 
 			var parameterDict = new StringDictionary ();
 
-			foreach (var parameters in tokens)
-			{
+			foreach (var parameters in tokens) {
 				var s = parameters.Split (new char[] { '=' });
-				parameterDict.Add(s[0], s[1]); 
+				parameterDict.Add (s [0], s [1]); 
 			}
 
 			this.TimeSlot = parameterDict ["timeSlot"];
@@ -115,7 +129,7 @@ namespace AutoBook.Entities
 				values ["booking[start_time]"] = this.Date.ToString ("yyyy-MM-dd HH:mm:ss zzz");
 				values ["booking[time_slot_id]"] = this.TimeSlot;
 				values ["booking[court_time]"] = "40";
-				values ["booking[court_id]"] = this.Court.ToString();
+				values ["booking[court_id]"] = this.Court.ToString ();
 				values ["booking[days]"] = this.Days;
 				values ["commit"] = "Book Court";
 				values ["utf8"] = "%E2%9C%93";

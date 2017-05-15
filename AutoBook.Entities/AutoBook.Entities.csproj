@@ -40,8 +40,9 @@
     <Compile Include="Court.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IBookingSlot.cs" />
-    <Compile Include="TynemouthBookingSlot.cs" />
     <Compile Include="TynemouthParser.cs" />
+    <Compile Include="Club.cs" />
+    <Compile Include="Slot.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

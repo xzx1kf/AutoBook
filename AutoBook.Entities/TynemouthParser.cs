@@ -47,7 +47,12 @@ namespace AutoBook.Entities
 
 		public static TimeSpan ParseTime(HtmlNode slot)
 		{
-			var timeNode = slot.SelectSingleNode ("div[@class='time']");
+			HtmlNode timeNode = null;
+			timeNode = slot.SelectSingleNode ("div[@class='time']");
+			if (timeNode == null) {
+				timeNode = slot.SelectSingleNode ("div[@class='peakTime']");
+			}
+
 			var time = "";
 
 			if (timeNode == null) {
@@ -61,10 +66,13 @@ namespace AutoBook.Entities
 			}
 
 			var timeStr = time.Split (new char[] { ':' });
-			//var timeInt = timeStr.Select(s => int.Parse(s)).ToArray();
 			var timeInt = Array.ConvertAll(timeStr, int.Parse);
 
-			return new TimeSpan (timeInt[0], timeInt[1], 0);
+			if (timeInt [0] < 12) {
+				return new TimeSpan (timeInt [0] + 12, timeInt [1], 0);
+			} else {
+				return new TimeSpan (timeInt [0], timeInt [1], 0);
+			}
 		}
 
 		private static bool VerifyTime(string time)
