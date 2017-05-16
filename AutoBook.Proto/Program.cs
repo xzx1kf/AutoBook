@@ -33,8 +33,7 @@ namespace AutoBook.Proto
 			foreach (var court in courts) {
 				System.Console.WriteLine (court.Number);
 
-				var slots = court.Slots.Where (s => s.Date >= DateTime.Now);
-				foreach (var slot in slots) {
+				foreach (var slot in court.Slots) {
 
 					Console.WriteLine ("{0} - {1}", slot.Date, slot.Booked);
 				}
