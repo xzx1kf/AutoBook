@@ -114,7 +114,7 @@ namespace AutoBook.Entities
 						court = int.Parse(htmlNode.InnerText [courtIndex].ToString());
 					}
 
-					var bookingSlot = new Slot (slotDateTime, booked, bookingLink);
+					var bookingSlot = new Slot (slotDateTime, court, booked, bookingLink);
 
 					Courts.Single (c => c.Number == court).Slots.Add (bookingSlot);
 				}

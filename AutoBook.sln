@@ -59,7 +59,7 @@ Global
 		{C4F41582-6CA3-48D9-A38B-246A92C4F8DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = AutoBook.Mono\AutoBook.Mono.csproj
+		StartupItem = AutoBook.Proto\AutoBook.Proto.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

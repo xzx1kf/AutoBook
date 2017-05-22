@@ -28,7 +28,7 @@ namespace AutoBook.Proto
 			Club tynemouth = (Club) formatter.Deserialize(stream);
 			stream.Close();
 
-			var courts = tynemouth.Courts.Where (c => c.Number == 4);
+			var courts = tynemouth.Courts.Where (c => c.Number == 1);
 
 			foreach (var court in courts) {
 				System.Console.WriteLine (court.Number);
@@ -40,8 +40,17 @@ namespace AutoBook.Proto
 			}
 
 
+			//var court1 = tynemouth.Courts.Where (c => c.Slots).Single (s => s.Date.Equals (new DateTime (2017, 5, 22, 21, 10, 0)));
+			var court1 = tynemouth.Courts.Single (c => c.Number == 1).Slots.Single(s => s.Date.Equals (new DateTime (2017, 5, 22, 21, 10, 0)));
+
+			Console.WriteLine (court1.Booked);
+			Console.Write (court1.Court);
+			Console.WriteLine (": " + court1.StartTime);
+
+
 
 			/*
+
 			Club tynemouth = new Club ("Tynemouth", "http://tynemouth-squash.herokuapp.com/");
 
 
